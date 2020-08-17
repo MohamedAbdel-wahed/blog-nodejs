@@ -4,4 +4,17 @@
 
 @tailwind components;
 
+.article{
+    @apply  w-6/12 flex-col items-center shadow-md rounded-md transition-all duration-300 ease-in-out
+}
+
+.article:hover{
+    @apply shadow-lg 
+}
+
+.quoteTab{
+    @apply  px-8 py-2 border-r border-gray-400 bg-white cursor-pointer transition-all duration-300 ease-in-out
+}
+
+
 @tailwind utilities;

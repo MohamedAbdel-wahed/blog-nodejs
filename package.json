@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/app.js",
+    "process": "postcss ./tailwind.css -o ./src/public/assets/css/style.css",
     "watch": "postcss ./tailwind.css -o ./src/public/assets/css/style.css --watch"
   },
   "keywords": [],

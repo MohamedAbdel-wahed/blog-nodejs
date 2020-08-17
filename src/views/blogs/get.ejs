@@ -1,0 +1,59 @@
+
+<%- include("../includes/header.ejs") %>
+
+
+    <div class="container h-screen mt-24 px-16 flex flex-col items-center">
+        <% if(blogs.length>0){ %>
+         <div class="my-3 w-full flex flex-col items-center">
+            <h1 class=" font-bold text-blue-900 text-lg my-1">Filter By Category:</h1>
+            <select id="categories" name="category" class="w-5/12 px-3 py-1 bg-white text-gray-800 border border-gray-300 rounded focus:outline-none focus:border-blue-200 cursor-pointer select-none">
+                <option value="All" selected>All</option>
+                <option value="Technology">Technology</option>
+                <option value="Art">Art</option>
+                <option value="Business">Business</option>
+                <option value="Health">Health</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Education">Education</option>
+                <option value="Economics">Economics</option>
+                <option value="Engineering">Engineering</option>
+            </select>
+         </div>
+         <div class="w-full">
+            <div class="my-6 text-center">
+                <h1 id="heading" class="font-bold md:font-bold text-2xl md:text-3xl text-orange-600 select-none"><span>All</span> Blogs</h1>
+            </div>
+            <div id="blogs_container" class="w-full">
+                <% blogs.forEach(blog=>{ %>
+                    <div id="<%= blog.category %>" class="w-full flex flex-col items-center my-6">
+                        <div class="w-1/2">
+                            <div class="float-right">
+                                <a href="/blog/edit/<%= blog.id %>" class="px-2 py-1 font-bold text-center text-xs text-white hover:text-blue-200 bg-blue-500 focus:bg-blue-700 focus:outluine-none rounded cursor-pointer">edit</a>
+                                <a class="ml-1 px-2 py-1 font-bold text-center text-xs text-white hover:text-red-200 bg-red-500 focus:bg-red-700 focus:outluine-none rounded cursor-pointer">delete</a>
+                            </div>
+                        </div>
+                        <div class="w-1/2 my-2 px-4 pt-2 pb-3 bg-gray-200 rounded hover:shadow-sm capitalize">
+                            <div class="mt-2 px-2 text-blue-900 text-sm font-bold hover:underline">
+                                <a href="/blog/<%= blog.id %>"><%= blog.title %></a>
+                            </div>
+                            <div class="inline-block mt-3 select-none">
+                                <p class="px-2 py-1 font-semibold text-xs text-indigo-900 bg-orange-200 rounded-lg"><%= blog.category %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %> 
+            </div>
+            <div id="not_found_category" class="text-gray-700 font-semibold text-lg text-center mt-8"></div>
+            <% }else{ %>
+                <div class="text-gray-700 font-semibold text-lg mt-8">We Couldn't Find Any Blogs :(</div>
+                <div class="my-1 text-lg text-gray-700">
+                    <a href="/blogs/create" class="text-blue-500 hover:underline"><b>Click here</b> </a>
+                    <span>to create new blog</span>
+                </div>
+            <% } %>
+         </div>
+    </div>
+
+    
+<script src="/js/filterBlogs.js"></script>
+
+<%- include("../includes/footer.ejs") %>
