@@ -2,7 +2,7 @@
 <%- include("../includes/header.ejs") %>
 
 
-    <div class="container h-screen mt-24 px-16 flex flex-col items-center">
+    <div class="container h-screen mt-24 mb-8 px-16 flex flex-col items-center">
         <% if(blogs.length>0){ %>
          <div class="my-3 w-full flex flex-col items-center">
             <h1 class=" font-bold text-blue-900 text-lg my-1">Filter By Category:</h1>
@@ -28,10 +28,12 @@
                         <div class="w-1/2">
                             <div class="float-right">
                                 <a href="/blog/edit/<%= blog.id %>" class="px-2 py-1 font-bold text-center text-xs text-white hover:text-blue-200 bg-blue-500 focus:bg-blue-700 focus:outluine-none rounded cursor-pointer">edit</a>
-                                <a class="ml-1 px-2 py-1 font-bold text-center text-xs text-white hover:text-red-200 bg-red-500 focus:bg-red-700 focus:outluine-none rounded cursor-pointer">delete</a>
+                                <form action="/blog/<%= blog.id %>?_method=DELETE" method="POST" class="inline-block ml-1">
+                                      <button class="px-2 py-1 font-bold text-center text-xs text-white hover:text-red-200 bg-red-500 focus:bg-red-700 focus:outline-none rounded cursor-pointer">delete</button>
+                                </form>
                             </div>
                         </div>
-                        <div class="w-1/2 my-2 px-4 pt-2 pb-3 bg-gray-200 rounded hover:shadow-sm capitalize">
+                        <div class="w-1/2 my-1 px-4 pt-2 pb-3 bg-gray-200 rounded hover:shadow-sm capitalize">
                             <div class="mt-2 px-2 text-blue-900 text-sm font-bold hover:underline">
                                 <a href="/blog/<%= blog.id %>"><%= blog.title %></a>
                             </div>

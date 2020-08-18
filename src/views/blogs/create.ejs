@@ -2,7 +2,7 @@
 <%- include("../includes/header.ejs") %>
 
     <div class="container mt-24 mx-auto px-16 flex justify-center">
-       <div class="w-2/3 pb-16 border border-gray-200 rounded-md shadow-sm">
+       <div class="w-2/3 pb-10 border border-gray-200 rounded-md shadow-sm">
         <h1 class="bg-gray-300 px-6 py-3 text-gray-900 text-lg font-bold select-none">Create New Blog</h1>
         <form action="/blogs" method="POST" class="w-full">
             <div class="w-full mt-10 px-6 flex flex-col">
@@ -27,7 +27,7 @@
                 <label for="content" class="select-none font-semibold">Article Content:</label>
                 <textarea type="text" name="content" rows="11" class="px-4 py-2 text-gray-800 text-sm border border-gray-300 focus:outline-none focus:border-blue-300 transition-all duration-300 ease-in-out rounded-md" placeholder="article content must contain 100 words at least" autocomplete="off"></textarea>
             </div>
-            <button class="mt-6 ml-6 px-4 py-2 bg-indigo-500 font-semibold text-white hover:text-indigo-200 focus:outline-none focus:bg-indigo-700 focus:shadow-outline rounded">Create</button>
+            <button class="mt-6 ml-6 px-3 py-1 bg-indigo-500 font-semibold text-sm text-white hover:text-indigo-200 focus:outline-none focus:bg-indigo-700 rounded">Create</button>
         </form>
        </div>
     </div>

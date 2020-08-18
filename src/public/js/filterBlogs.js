@@ -24,6 +24,7 @@ if(categories){
              if(filteredBlogs.length>0){
                 filteredBlogs.forEach(blog=>{
                     blog.classList.remove('hidden');
+                    notFoundCategory.textContent='';
                 })
              }
              else{
