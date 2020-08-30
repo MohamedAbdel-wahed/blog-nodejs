@@ -1,10 +1,22 @@
 const mongoose= require('mongoose')
-const Schema= mongoose.Schema
 
-const blog= new Schema({
-    category:{
+
+const blogSchema= new mongoose.Schema({
+    userId:{
         type: String,
-        required: true
+        required: true 
+    }, 
+    creator:{
+        type: String,
+        required: true 
+    },
+     category:{
+        type: String,
+        required: true 
+    },
+     image:{
+        type: String,
+        required: true 
     },
      title:{
         type: String,
@@ -17,6 +29,6 @@ const blog= new Schema({
 }, {timestamps: true})
 
 
-const Blog= mongoose.model('Blog', blog)
+const Blog= mongoose.model('Blog', blogSchema)
 
 module.exports= Blog

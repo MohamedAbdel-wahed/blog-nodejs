@@ -16,5 +16,25 @@
     @apply  px-8 py-2 border-r border-gray-400 bg-white cursor-pointer transition-all duration-300 ease-in-out
 }
 
+.input{
+    @apply px-4 py-2 text-gray-800 border border-gray-300 transition-all duration-200 ease-in-out rounded-md
+}
+
+.input:focus{
+    @apply outline-none border-blue-300
+}
+
+.btn{
+    @apply mt-6 ml-6 px-3 py-2 bg-indigo-500 font-semibold text-white rounded-md
+}
+
+.btn:hover{
+    @apply text-indigo-200
+}
+
+.btn:focus{
+    @apply outline-none bg-indigo-700
+}
+
 
 @tailwind utilities;

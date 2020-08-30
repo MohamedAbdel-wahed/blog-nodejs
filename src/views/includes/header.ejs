@@ -9,25 +9,40 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
 </head>
 <body class="font-nunito bg-white overflow-x-hidden">
+    
     <header id="navbar">
         <nav class="w-full h-16 px-32 text-white font-bold bg-indigo-600 fixed top-0 flex items-center select-none z-30">
             <a href="/" class="mx-8 text-2xl md:text-3xl tracking-wider flex">
                 <span class="text-red-600">B</span>
                 <span class="text-red-100">logie</span>
             </a>
+            
             <ul id="navLinks" class="ml-auto flex ">
-                <li id="home" class="mr-4 p-2 cursor-pointer">
-                    <a href="/">Home</a>
-                </li>
-                <li id="blogs" class="mr-4 p-2 cursor-pointer">
-                    <a href="/blogs">Blogs</a>
-                </li>
-                <li id="authors" class="mr-4 p-2 cursor-pointer">
-                    <a href="/authors">Authors</a>
-                </li>
-                <li id="about" class="mr-4 p-2 cursor-pointer">
-                    <a href="/about">About</a>
-                </li>
+           
+               <% if(!user){ %>
+                    <li id="" class="mr-4 p-2 cursor-pointer">
+                        <a href="/">Home</a>
+                    </li>
+                    <li id="signup" class="mr-4 p-2 cursor-pointer">
+                        <a href="/signup">Signup</a>
+                    </li> 
+                    <li id="signin" class="mr-4 p-2 cursor-pointer">
+                        <a href="/signin">Signin</a>
+                    </li>
+                <% }else{ %>
+                    <li id="" class="mr-4 p-2 cursor-pointer">
+                        <a href="/">Home</a>
+                    </li>
+                    <li id="blogs" class="mr-4 p-2 cursor-pointer">
+                        <a href="/blogs">Blogs</a>
+                    </li>
+                    <li id="about" class="mr-4 p-2 cursor-pointer">
+                        <a href="/about">About</a>
+                    </li>
+                    <li class="mr-4 p-2 cursor-pointer">
+                        <a href="/logout">SignOut</a>
+                    </li>
+               <% } %>
             </ul>
         </nav>
     </header>

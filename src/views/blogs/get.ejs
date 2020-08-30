@@ -1,61 +1,59 @@
 
 <%- include("../includes/header.ejs") %>
 
-
-    <div class="container h-screen mt-24 mb-8 px-16 flex flex-col items-center">
+    <div class="container mt-24 px-16 flex flex-col items-center">
         <% if(blogs.length>0){ %>
-         <div class="my-3 w-full flex flex-col items-center">
-            <h1 class=" font-bold text-blue-900 text-lg my-1">Filter By Category:</h1>
-            <select id="categories" name="category" class="w-5/12 px-3 py-1 bg-white text-gray-800 border border-gray-300 rounded focus:outline-none focus:border-blue-200 cursor-pointer select-none">
-                <option value="All" selected>All</option>
-                <option value="Technology">Technology</option>
-                <option value="Art">Art</option>
-                <option value="Business">Business</option>
-                <option value="Health">Health</option>
-                <option value="Chemistry">Chemistry</option>
-                <option value="Education">Education</option>
-                <option value="Economics">Economics</option>
-                <option value="Engineering">Engineering</option>
-            </select>
-         </div>
-         <div class="w-full">
-            <div class="my-6 text-center">
-                <h1 id="heading" class="font-bold md:font-bold text-2xl md:text-3xl text-orange-600 select-none"><span>All</span> Blogs</h1>
+            <a href="/blogs/create" title="create new blog" class="cursor-pointer mr-10 ml-auto rounded-full px-4 bg-pink-500 focus:bg-pink-700 text-white hover:text-pink-200 text-4xl font-extrabold"><b>+</b></a>
+            <div class="my-3 w-full flex flex-col items-center">
+                <h1 class=" font-bold text-blue-900 text-lg my-2">Filter By Category:</h1>
+                <select id="categories" name="category" class="w-5/12 px-3 py-1 bg-white text-gray-800 border border-gray-300 rounded focus:outline-none focus:border-blue-200 cursor-pointer select-none">
+                    <option value="All" selected>All</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Art">Art</option>
+                    <option value="Business">Business</option>
+                    <option value="Nature">Nature</option>
+                    <option value="Health">Health</option>
+                    <option value="Education">Education</option>
+                    <option value="Engineering">Engineering</option>
+                </select>
             </div>
-            <div id="blogs_container" class="w-full">
-                <% blogs.forEach(blog=>{ %>
-                    <div id="<%= blog.category %>" class="w-full flex flex-col items-center my-6">
-                        <div class="w-1/2">
-                            <div class="float-right">
-                                <a href="/blog/edit/<%= blog.id %>" class="px-2 py-1 font-bold text-center text-xs text-white hover:text-blue-200 bg-blue-500 focus:bg-blue-700 focus:outluine-none rounded cursor-pointer">edit</a>
-                                <form action="/blog/<%= blog.id %>?_method=DELETE" method="POST" class="inline-block ml-1">
-                                      <button class="px-2 py-1 font-bold text-center text-xs text-white hover:text-red-200 bg-red-500 focus:bg-red-700 focus:outline-none rounded cursor-pointer">delete</button>
-                                </form>
+            <div class="w-full">
+                <div class="mb-6 mt-8 text-center">
+                    <h1 id="heading" class="font-bold md:font-bold text-2xl md:text-3xl text-orange-600 select-none"><span class="type">All</span> Blogs</h1>
+                </div>
+                <div id="blogs_container" class="w-full flex flex-wrap mx-32">
+                    <% blogs.forEach(blog=>{ %>
+                        <a id="<%= blog.category %>" href="/blog/<%= blog.id %>" class="w-3/12 flex flex-col m-4 transform translate-y-0 hover:-translate-y-1 hover:shadow-md transition-all duration-600 ease-out" title="click to show the blog">
+                            <div class="w-full relative">
+                                <div class="absolute w-full bg-gray-700 inset-0 opacity-0 hover:opacity-25 rounded-md transition-all duration-300 ease-out"></div>
+                                <div class="w-full rounded">
+                                    <img src="/assets/images/uploads/<%= blog.image %>" class="w-full h-40 rounded-md rounded-b-none">
+                                </div>
+                                <div class="px-4 pt-2 pb-3 bg-gray-200 rounded hover:shadow-sm capitalize">
+                                    <div class="mt-2 px-2 text-blue-900 text-sm font-bold">
+                                        <h1 class="title h-10"><%= blog.title %></h1>
+                                    </div>
+                                    <div class="inline-block mt-4 select-none">
+                                        <p class="px-2 py-1 font-semibold text-xs text-indigo-900 bg-orange-200 rounded-lg"><%= blog.category %></p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="w-1/2 my-1 px-4 pt-2 pb-3 bg-gray-200 rounded hover:shadow-sm capitalize">
-                            <div class="mt-2 px-2 text-blue-900 text-sm font-bold hover:underline">
-                                <a href="/blog/<%= blog.id %>"><%= blog.title %></a>
-                            </div>
-                            <div class="inline-block mt-3 select-none">
-                                <p class="px-2 py-1 font-semibold text-xs text-indigo-900 bg-orange-200 rounded-lg"><%= blog.category %></p>
-                            </div>
-                        </div>
-                    </div>
-                <% }); %> 
+                        </a>
+                    <% }); %> 
+                </div>
+                <div id="not_found_category" class="text-gray-700 font-semibold text-lg text-center mt-8"></div>
             </div>
-            <div id="not_found_category" class="text-gray-700 font-semibold text-lg text-center mt-8"></div>
-            <% }else{ %>
+        <% }else{ %>
                 <div class="text-gray-700 font-semibold text-lg mt-8">We Couldn't Find Any Blogs :(</div>
-                <div class="my-1 text-lg text-gray-700">
+                <div class="mt-1 h-screen text-lg text-gray-700">
                     <a href="/blogs/create" class="text-blue-500 hover:underline"><b>Click here</b> </a>
                     <span>to create new blog</span>
                 </div>
-            <% } %>
-         </div>
+        <% } %>
     </div>
 
     
-<script src="/js/filterBlogs.js"></script>
+<script src="/js/frontend/filterBlogs.js"></script>
+<script src="/js/frontend/cutLongTitles.js"></script>
 
 <%- include("../includes/footer.ejs") %>

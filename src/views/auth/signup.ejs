@@ -1,0 +1,34 @@
+<%- include("../includes/header.ejs") %>
+
+<div class="w-full h-screen container">
+    <div class="mt-24 mb-16 mx-auto px-16 flex justify-center">
+        <div class="w-1/2 pb-10 border border-gray-300 rounded-md shadow-sm">
+            <h1 class="bg-gray-300 px-6 py-3 text-gray-900 text-center text-xl font-extrabold select-none">Register</h1>
+            <form id="signup_form" action="/signup" method="POST" class="w-full">
+                <div class="w-full mt-8 px-10 flex flex-col">
+                    <label for="username" class="select-none font-semibold">Username:</label>
+                    <input type="text" name="username" class="input" placeholder="John Smith" autocomplete="off">
+                    <p id="username_error" class="mt-1 text-red-600 text-sm"></p>
+                </div>
+                <div class="w-full mt-4 px-10 flex flex-col">
+                    <label for="email" class="font-semibold select-none">Email:</label>
+                    <input type="text" name="email" class="input" placeholder="john99@gmail.com" autocomplete="off">
+                    <p id="email_error" class="mt-1 text-red-600 text-sm"></p>
+                </div>
+                <div class="w-full mt-4 px-10 flex flex-col">
+                    <label for="password" class="select-none font-semibold">Password:</label>
+                    <input type="password" name="password" class="input" placeholder="********" autocomplete="off">
+                    <p id="password_error" class="mt-1 text-red-600 text-sm"></p>
+                </div>
+                <button class="btn ml-10 text-sm">Submit</button>
+            </form>
+        </div>
+     </div>
+</div>
+
+
+
+ <script src="/js/auth/signup.js"></script>
+
+
+<%- include("../includes/footer.ejs") %>

@@ -5,9 +5,18 @@
    <div class="w-full flex flex-col items-center h-screen mt-32 py-8 px-20">
        <div class="w-8/12 text-gray-800">
            <header class="break-all">
-               <h1 class="px-2 text-xl font-bold rounded capitalize"><%= blog.title %></h1>
+              <h1 class="px-2 text-xl font-bold rounded capitalize"><%= blog.title %></h1>
+              <% if(user.id==blog.userId){%>
+                <div class="float-right">
+                    <a href="/blog/edit/<%= blog.id %>" class="px-2 py-1 font-bold text-center text-xs text-white hover:text-blue-200 bg-blue-500 focus:bg-blue-700 focus:outluine-none rounded cursor-pointer">edit</a>
+                    <form action="/blog/<%= blog.id %>?_method=DELETE" method="POST" class="inline-block ml-1">
+                        <button class="px-2 py-1 font-bold text-center text-xs text-white hover:text-red-200 bg-red-500 focus:bg-red-700 focus:outline-none rounded cursor-pointer">delete</button>
+                    </form>
+                </div>  
+              <%}%>
                <div class="py-2 px-3 text-xs text-gray-600">
                 <p><strong>Category: </strong><%= blog.category %></p>
+                <p><strong>Created By: </strong><%= blog.creator %></p>
                 <p><strong>Created At: </strong><%= blog.createdAt %></p>
                 <p><strong>Updated At: </strong><%= blog.updatedAt %></p>
                </div>

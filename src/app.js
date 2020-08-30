@@ -1,15 +1,23 @@
 const express= require('express')
+const expressFileupload= require('express-fileupload')
 const mongoose= require('mongoose')
+const cookieParser= require('cookie-parser')
 const methodOverride = require('method-override')
 const blogRoutes= require('./routes/blog')
+const authRoutes= require('./routes/auth')
+const {checkCurrentUser}= require('./middleware/auth')
+
 
 
 const app= express()
+app.use(expressFileupload())
+app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('src/public'))
 app.use(methodOverride('_method'))
-mongoose.set('useFindAndModify', false);
-app.set('view engine', 'ejs')
+app.use(cookieParser())
+mongoose.set('useFindAndModify',false);
+app.set('view engine','ejs')
 app.set('views','src/views')
 
 
@@ -19,6 +27,10 @@ mongoose.connect(dbURI, {useNewUrlParser:true, useUnifiedTopology:true, useCreat
         .catch(err=> console.log(err))
 
 
+app.get('*', checkCurrentUser)
+
+app.use(authRoutes)
+
 app.use(blogRoutes)
 
 app.get('/', (req,res)=>{
@@ -27,10 +39,6 @@ app.get('/', (req,res)=>{
 
 app.get('/about', (req,res)=>{
     res.render('about', {title: "About"})
-})
-
-app.get('/authors', (req,res)=>{
-    res.render('authors', {title: "Authors"})
 })
 
 app.use((req,res)=>{

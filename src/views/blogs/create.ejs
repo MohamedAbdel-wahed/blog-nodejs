@@ -1,36 +1,41 @@
 
 <%- include("../includes/header.ejs") %>
 
-    <div class="container mt-24 mx-auto px-16 flex justify-center">
+    <div class="container mt-32 mb-16 mx-auto px-16 flex justify-center">
        <div class="w-2/3 pb-10 border border-gray-200 rounded-md shadow-sm">
         <h1 class="bg-gray-300 px-6 py-3 text-gray-900 text-lg font-bold select-none">Create New Blog</h1>
-        <form action="/blogs" method="POST" class="w-full">
+        <form id="createBlogForm" action="/blogs" method="POST" class="w-full" enctype="multipart/form-data">
             <div class="w-full mt-10 px-6 flex flex-col">
-                <label for="category" class="select-none font-semibold">Article Category:</label>
+                <label for="category" class="select-none font-semibold">Blog Category:</label>
                 <select name="category" class="w-5/12 px-3 py-1 bg-white text-gray-700 border border-gray-300 rounded focus:outline-none focus:border-blue-400 cursor-pointer select-none">
-                    <option  selected disabled>No Selected Option</option>
+                    <option selected disabled value="General" >General</option>
                     <option value="Technology">Technology</option>
                     <option value="Art">Art</option>
                     <option value="Business">Business</option>
+                    <option value="Nature">Nature</option>
                     <option value="Health">Health</option>
-                    <option value="Chemistry">Chemistry</option>
                     <option value="Education">Education</option>
-                    <option value="Economics">Economics</option>
                     <option value="Engineering">Engineering</option>
                 </select>
             </div>
+            <div class="w-6/12 mt-10 px-6 flex flex-col">
+                <label for="image" class="mb-1 select-none font-semibold">Blog Image:</label>
+                <input type="file" name="file" class="bg-gray-100 py-1 border border-gray-200 cursor-pointer focus:outline-none focus:border-blue-200 rounded">
+            </div>
             <div class="w-full mt-10 px-6 flex flex-col">
-                <label for="title" class="select-none font-semibold">Article Title:</label>
-                <input type="text" name="title" class="px-4 py-2 text-gray-800 border border-gray-300 focus:outline-none focus:border-blue-300 transition-all duration-300 ease-in-out rounded-md" placeholder="article title" autocomplete="off">
+                <label for="title" class="select-none font-semibold">Blog Title:</label>
+                <input type="text" name="title" class="input" placeholder="blog title" autocomplete="off">
             </div>
              <div class="w-full mt-10 px-6 flex flex-col">
-                <label for="content" class="select-none font-semibold">Article Content:</label>
-                <textarea type="text" name="content" rows="11" class="px-4 py-2 text-gray-800 text-sm border border-gray-300 focus:outline-none focus:border-blue-300 transition-all duration-300 ease-in-out rounded-md" placeholder="article content must contain 100 words at least" autocomplete="off"></textarea>
+                <label for="content" class="select-none font-semibold">Blog Content:</label>
+                <textarea type="text" name="content" rows="5" class="input text-sm" placeholder="blog content goes here..."></textarea>
             </div>
-            <button class="mt-6 ml-6 px-3 py-1 bg-indigo-500 font-semibold text-sm text-white hover:text-indigo-200 focus:outline-none focus:bg-indigo-700 rounded">Create</button>
+            <button class="btn text-sm">Create</button>
         </form>
        </div>
     </div>
+
+
 
 
 <%- include("../includes/footer.ejs") %>
