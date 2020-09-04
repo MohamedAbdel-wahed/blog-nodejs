@@ -13,11 +13,11 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
-    "nodemon": "^2.0.4",
     "postcss-cli": "^7.1.1",
     "tailwindcss": "^1.6.2"
   },
   "dependencies": {
+    "nodemon": "^2.0.4",
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.5",
