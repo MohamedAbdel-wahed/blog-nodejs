@@ -7,7 +7,7 @@ const navLinks= document.querySelectorAll('#navLinks>li');
 navLinks.forEach(link=>{
   const id= link.getAttribute('id')
   if(path == `/${id}`){
-      link.classList.add('text-gray-900');
+      link.classList.add('text-red-600');
   }
 })
 

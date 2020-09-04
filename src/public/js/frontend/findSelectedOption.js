@@ -8,3 +8,4 @@ allCategories.forEach(category=>{
         category.setAttribute('selected', true);
     }
 });
+

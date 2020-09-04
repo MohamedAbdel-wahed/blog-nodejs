@@ -1,7 +1,6 @@
+const jwt= require('jsonwebtoken')
 const Blog= require('../models/Blog')
 const User= require('../models/User')
-const jwt= require('jsonwebtoken')
-
 
 
 
@@ -11,10 +10,15 @@ const getCreate= (req,res)=>{
 
 
 const createBlog= (req,res)=>{
+    //Image Validation
     const allowedMimeTypes=['image/jpeg','image/jpg']
     const allowedFileExt= ['jpeg','jpg']
-    const allowedFileSize= 15000
+    const allowedFileSize= 1200000
     
+    if(!req.files){
+        res.send("You Have To Choose A Good Image For Your Blog")
+      return;
+    }
     const file= req.files.file
     const fileName= file.name.toLowerCase()
     const fileMimeType= file.mimetype
@@ -23,7 +27,7 @@ const createBlog= (req,res)=>{
     const imgDist= `img${file.md5.substring(0,10)}${Date.now()}.${fileExt}`
 
     if(fileSize > allowedFileSize){
-       res.send('File Is Too Big')
+       res.send('File Is Too Big.Please try another file')
     }
     else if(!allowedFileExt.includes(fileExt)){
           res.send('You Can Only Upload JPG Or JPEg Images')
@@ -36,20 +40,29 @@ const createBlog= (req,res)=>{
         jwt.verify(token,'blogie secret code', async (err,decodedToken)=>{
             let user= await User.findById(decodedToken.id)
             const blogDetails={userId:'', creator:'', image:'', category:'', title:'', content:''}
-
             blogDetails.userId=user.id
             blogDetails.creator=user.username
             blogDetails.image=imgDist
             blogDetails.category=req.body.category
-            blogDetails.title=req.body.title
-            blogDetails.content=req.body.content
+            blogDetails.title=req.body.title.trim()
+            blogDetails.content=req.body.content.trim()
+
+           if(!blogDetails.category){
+               res.send('Please Select A category')
+           }
+           else if(blogDetails.content.length<500){
+               res.send('Blog Content Must Be At Least 500 Charachters')
+           }
+           else{
+
             const blog= new Blog(blogDetails)
             blog.save()
                 .then(result=> {
                    file.mv(`${__dirname}/../public/assets/images/uploads/${imgDist}`, (err)=>console.log(err))
                     res.redirect('/blogs')
                  })
-                .catch(err=> console.log(err))
+                .catch(err=> res.send(err.message))
+           }
         })
 
     }
@@ -89,9 +102,20 @@ const getEdit= (req,res)=>{
 
 
 const editBlog= (req,res)=>{
-    Blog.findByIdAndUpdate(req.params.id, req.body, {new: true})
-        .then(result=> res.redirect(`/blog/${req.params.id}`))
-        .catch(err=> console.log(err))
+    if(!req.body.category){
+        res.send('Please Select A category')
+    }
+    else if(!req.body.title.trim()){
+        res.send('Please Enter Title For Your Blog (Recommended to be expressive)')
+    }
+    else if(req.body.content.trim().length<500){
+        res.send('Blog Content Must Be At Least 500 Charachters')
+    }
+    else{
+        Blog.findByIdAndUpdate(req.params.id, req.body, {new: true})
+            .then(result=> res.redirect(`/blog/${req.params.id}`))
+            .catch(err=> console.log(err))
+    }
 }
 
 

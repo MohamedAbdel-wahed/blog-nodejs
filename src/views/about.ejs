@@ -2,7 +2,79 @@
 <%- include("includes/header.ejs") %>
 
 
-<h1 class="mt-4 text-center">About Page</h1>
+<section class="mt-32 w-106 sm:w-full px-4">
+        <h1 id="welcome" class="transform translate-y-64 text-blue-600 font-extrabold text-center text-2xl sm:text-3xl md:text-4xl lg:text-6xl">Welcome To Our Blogie Website</h1>
+</section>
+
+<section class="mt-24 w-100 sm:w-full px-16 md:px-40">
+    <h1 id="question1" class="transform translate-y-100 text-2xl sm:text-4xl text-red-600 font-bold translate-x-1/2">What Is Blogie ?</h1>
+    <p id="answer1_1" class="m-3 px-4 text-gray-600 text-lg sm:text-xl font-semibold transform translate-y-100 translate-x-1/2 opacity-0">Blogie is where your interests connect you with your people.</p>
+    <p id="answer1_2" class="m-3 px-4 text-gray-600 text-lg sm:text-xl font-semibold transform translate-y-100 translate-x-1/2 opacity-0">It's is one of the best sites to share your thoughts with other people in the world :)</p>
+</section>
+
+<section class="mt-20 w-106 sm:w-full px-16 md:px-40">
+    <h1 id="question2" class="transform translate-y-100 text-2xl sm:text-4xl text-red-600 font-bold translate-x-1/2">Who Is The Author ?</h1>
+    <p id="answer2_1" class="m-3 px-4 text-gray-600 text-lg sm:text-xl font-semibold transform translate-y-100 translate-x-1/2 opacity-0">Mohamed Abdel-wahed</p>
+    <p id="answer2_2" class="m-3 px-4 text-gray-600 text-lg sm:text-xl font-semibold transform translate-y-100 translate-x-1/2 opacity-0">Full-Stack Web Developer</p>
+    <p id="answer2_3" class="m-3 px-4 text-gray-600 text-lg sm:text-xl font-semibold transform translate-y-100 translate-x-1/2 opacity-0"><strong>Email: </strong>webdeveloper.int99@gmail.com </p>
+    <p id="answer2_4" class="m-3 px-4 text-gray-600 text-lg sm:text-xl font-semibold transform translate-y-100 translate-x-1/2 opacity-0"><strong>Phone: </strong>+201065002853 </p>
+</section>
+
+<section class="mt-20 w-100 sm:w-full px-16 md:px-24 lg:px-40">
+    <h1 id="question3" class="opacity-0 text-2xl sm:text-4xl text-red-600 font-bold">Who Are Our Sponsers ?</h1>
+    <div class="flex md:flex-row md:justify-around flex-col">
+        <div id="answer3_1" class="w-full flex justify-center md:w-3/12 px-4 md:px-0 opacity-0">
+            <img src="/assets/images/sponser1.png" class="w-10/12 sm:w-1/2 md:w-full">
+        </div>
+        <div id="answer3_2" class="w-full flex justify-center md:w-3/12 px-4 md:px-0 opacity-0">
+            <img src="/assets/images/sponser2.png" class="w-10/12 sm:w-1/2 md:w-full">
+        </div>
+        <div id="answer3_3" class="w-full flex justify-center md:w-3/12 px-4 md:px-0 opacity-0">
+            <img src="/assets/images/sponser3.png" class="w-10/12 sm:w-1/2 md:w-full">
+        </div>
+        <div id="answer3_4" class="w-full flex justify-center md:w-3/12 px-4 md:px-0 opacity-0">
+            <img src="/assets/images/sponser4.png" class="w-10/12 sm:w-1/2 md:w-full">
+        </div>
+    </div>
+</section>
+
+<section class="text-center w-100 sm:w-full mt-24 mb-16">
+    <h1 id="thank" class="opacity-0 px-3 text-xl sm:text-3xl lg:text-3xl font-bold md:font-extrabold text-blue-900 uppercase">We Hope you're enjoying with us :)</h1>
+</section>
 
 
-<%- include("includes/footer.ejs") %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+<script>
+
+window.onload= function(){
+        TweenMax.to('#welcome',1,{y:"-10rem", ease:"back.out(1.7)"});
+        TweenMax.to('#question1',1,{y:"-30rem",delay:1, ease:"back.out(1.7)"});
+        TweenMax.to('#question1',1,{x:"-30rem",delay:3, ease:"back.out(1.7)"});
+        TweenMax.to('#answer1_1',1,{y:"-30rem",delay:3, ease:"back.out(1.7)"});
+        TweenMax.to('#answer1_1',1,{x:"-33rem",opacity:100, delay:4, ease:"back.out(1.7)"});
+        TweenMax.to('#answer1_2',1,{y:"-30rem",delay:5, ease:"back.out(1.7)"});
+        TweenMax.to('#answer1_2',1,{x:"-33rem",opacity:100, delay:6, ease:"back.out(1.7)"});
+      
+        TweenMax.to('#question2',1,{y:"-30rem",delay:2, ease:"back.out(1.7)"});
+        TweenMax.to('#question2',1,{x:"-30rem",delay:3, ease:"back.out(1.7)"});
+        TweenMax.to('#answer2_1',1,{y:"-30rem",delay:4, ease:"back.out(1.7)"});
+        TweenMax.to('#answer2_1',1,{x:"-33rem",opacity:100, delay:4.5, ease:"back.out(1.7)"});
+        TweenMax.to('#answer2_2',1,{y:"-30rem",delay:5, ease:"back.out(1.7)"});
+        TweenMax.to('#answer2_2',1,{x:"-33rem",opacity:100, delay:5.5, ease:"back.out(1.7)"});
+        TweenMax.to('#answer2_3',1,{y:"-30rem",delay:6, ease:"back.out(1.7)"});
+        TweenMax.to('#answer2_3',1,{x:"-33rem",opacity:100, delay:6.5, ease:"back.out(1.7)"});
+        TweenMax.to('#answer2_4',1,{y:"-30rem",delay:7, ease:"back.out(1.7)"});
+        TweenMax.to('#answer2_4',1,{x:"-33rem",opacity:100, delay:7.5, ease:"back.out(1.7)"});
+
+        TweenMax.to('#question3',1,{opacity:100,delay:8, ease:"back.out(1.7)"});
+        TweenMax.to('#answer3_1',1,{opacity:100,delay:8.8, ease:"back.out(1.7)"});
+        TweenMax.to('#answer3_2',1,{opacity:100,delay:9.4, ease:"back.out(1.7)"});
+        TweenMax.to('#answer3_3',1,{opacity:100,delay:10.2, ease:"back.out(1.7)"});
+        TweenMax.to('#answer3_4',1,{opacity:100,delay:11, ease:"back.out(1.7)"});
+
+        TweenMax.to('#thank',1,{opacity:100,delay:12, ease:"back.out(1.7)"});
+
+
+    };
+
+</script>

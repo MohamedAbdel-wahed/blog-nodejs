@@ -1,4 +1,4 @@
-
+// Auth Validation 
 module.exports.handleValidationErrors= (err)=>{
   let registerErrors={username:'', email:'', password:''}
   let loginErrors={email:'', password:''}
@@ -27,3 +27,4 @@ module.exports.handleValidationErrors= (err)=>{
   })
 return registerErrors
 }
+

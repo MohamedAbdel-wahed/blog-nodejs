@@ -23,7 +23,6 @@ if(categories){
             })
         }
         else if(filteredBlogs.length>0){
-            console.log(filteredBlogs)
                 filteredBlogs.forEach(blog=>{
                     blog.classList.remove('hidden');
                     notFoundCategory.textContent='';

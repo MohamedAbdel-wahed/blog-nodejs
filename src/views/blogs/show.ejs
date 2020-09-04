@@ -2,37 +2,31 @@
 <%- include("../includes/header.ejs") %>
 
 
-   <div class="w-full flex flex-col items-center h-screen mt-32 py-8 px-20">
-       <div class="w-8/12 text-gray-800">
-           <header class="break-all">
-              <h1 class="px-2 text-xl font-bold rounded capitalize"><%= blog.title %></h1>
-              <% if(user.id==blog.userId){%>
-                <div class="float-right">
-                    <a href="/blog/edit/<%= blog.id %>" class="px-2 py-1 font-bold text-center text-xs text-white hover:text-blue-200 bg-blue-500 focus:bg-blue-700 focus:outluine-none rounded cursor-pointer">edit</a>
+   <div class="w-full flex flex-col items-center mt-16 sm:mt-20 mb-24 py-8 px-4 xs:px-8 sm:px-20">
+       <div class="w-full sm:w-10/12 text-gray-800 break-words">
+           <header class="flex flex-col justify-end py-1 border-b border-gray-300">
+             <div class="w-full">
+                <h1 class="text-lg sm:text-xl font-extrabold rounded capitalize"><%= blog.title %></h1>
+                <div class="py-2 px-1 text-xs text-gray-600">
+                     <p><strong>Category: </strong><%= blog.category %></p>
+                     <p><strong>Created By: </strong><%= blog.creator %></p>
+                     <p><strong>Created At: </strong>Mon, 8 April 2020</p>
+                     <p><strong>Updated At: </strong>Mon, 9 May 2020</p>
+                </div>
+             </div>
+               <% if(user.id==blog.userId){%>
+                <div class="flex ml-auto">
+                    <a href="/blog/edit/<%= blog.id %>" class="mr-1 px-2 sm:px-4 py-1 font-bold text-center text-xs sm:text-sm text-white hover:text-blue-200 bg-blue-400 focus:bg-blue-700 focus:outluine-none rounded cursor-pointer">Edit</a>
                     <form action="/blog/<%= blog.id %>?_method=DELETE" method="POST" class="inline-block ml-1">
-                        <button class="px-2 py-1 font-bold text-center text-xs text-white hover:text-red-200 bg-red-500 focus:bg-red-700 focus:outline-none rounded cursor-pointer">delete</button>
+                        <button class="px-2 sm:px-4 py-1 font-bold text-center text-xs sm:text-sm text-white hover:text-red-200 bg-red-400 focus:bg-red-700 focus:outline-none rounded cursor-pointer">Delete</button>
                     </form>
                 </div>  
               <%}%>
-               <div class="py-2 px-3 text-xs text-gray-600">
-                <p><strong>Category: </strong><%= blog.category %></p>
-                <p><strong>Created By: </strong><%= blog.creator %></p>
-                <p><strong>Created At: </strong><%= blog.createdAt %></p>
-                <p><strong>Updated At: </strong><%= blog.updatedAt %></p>
-               </div>
             </header>
-            <hr>
-           <article class="mt-8 break-all">
-               <p class="pb-2 px-2"><%= blog.content %></p>
+           <article class="mt-8 px-4 border-r border-l border-gray-200 text-sm md:text-base">
+               <p class="pb-2"><%- blog.content %></p>
            </article>
        </div>
    </div>
 
 
-
-
-
-
-
-
-<%- include("../includes/footer.ejs") %>

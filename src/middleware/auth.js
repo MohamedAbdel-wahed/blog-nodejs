@@ -16,6 +16,19 @@ module.exports.isAuth= (req,res,next)=>{
 }
 
 
+// protect auth forms from being accessed if the user is logged in 
+module.exports.preventAccessIfAuth= (req,res,next)=>{
+    const token= req.cookies.jwt
+    jwt.verify(token,'blogie secret code', (err,decodedToken)=>{
+        if(err){
+           next()
+        }
+        else{
+            res.redirect('/')
+        }
+    })
+}
+
 
 // check the current user
 module.exports.checkCurrentUser= (req,res,next)=>{

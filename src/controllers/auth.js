@@ -25,20 +25,19 @@ const getSignin= (req,res)=>{
     res.render('auth/signin', {title: "Signin"})
 }
 
-const signin= (req,res)=>{
+const signin= async (req,res)=>{
     const {email,password}= req.body 
-    const user= User.login(email,password)
-                    .then(result=>{
-                        let token= createUserToken(user.id)
-                        res.cookie('jwt', token, {maxAge: 1000*60*60*24, httpOnly: true})
-                       res.status(201).json({userId: user.id})
-                    })
-                    .catch(err=>{
-                        const errors= handleValidationErrors(err)
-                        res.status(400).json({errors})
-                    })
-    
 
+    try{
+        const user= await User.login(email,password)
+        let token= createUserToken(user.id)
+        res.cookie('jwt', token, {maxAge: 1000*60*60*24, httpOnly: true})
+        res.status(201).json({userId: user.id})
+    }
+    catch(err){
+        const errors= handleValidationErrors(err)
+        res.status(400).json({errors})
+    }
 }
 
 

@@ -1,13 +1,13 @@
 
 <%- include("../includes/header.ejs") %>
 
-<div class="container mt-32 mb-16 mx-auto px-16 flex justify-center">
-    <div class="w-2/3 pb-10 border border-gray-200 rounded-md shadow-sm">
-     <h1 class="bg-gray-300 px-6 py-3 text-gray-900 text-lg font-bold select-none">Edit New Blog</h1>
-     <form action="/blog/<%= blog.id %>?_method=PUT" method="POST" class="w-full">
+<div class="container mt-24 sm:mt-32 mx-auto sm:px-10 lg:px-16 flex justify-center">
+    <div class="w-full sm:w-11/12 md:w-10/12 lg:w-2/3 xl:w-7/12 pb-10 sm:border sm:border-gray-300 rounded-md shadow-sm">
+     <h1 class="sm:bg-gray-300 px-6 text-center sm:text-left py-3 text-red-600 sm:text-gray-700 text-3xl sm:text-lg font-bold select-none">Edit Your Blog</h1>
+     <form action="/blog/<%= blog.id %>?_method=PUT" method="POST" class="w-full px-2">
          <div class="w-full mt-10 px-6 flex flex-col">
              <label for="category" class="select-none font-semibold">Blog Category:</label>
-             <select name="category" data-category="<%= blog.category %>" id="blog_categories" class="w-5/12 px-3 py-1 bg-white text-gray-700 border border-gray-300 rounded focus:outline-none focus:border-blue-400 cursor-pointer select-none">
+             <select name="category" data-category="<%= blog.category %>" id="blog_categories" class="w-full sm:w-1/2 px-3 py-1 bg-white text-gray-700 border border-gray-300 rounded focus:outline-none focus:border-blue-400 cursor-pointer select-none">
                  <option value="Technology">Technology</option>
                  <option value="Art">Art</option>
                  <option value="Business">Business</option>
@@ -19,7 +19,7 @@
          </div>
          <div class="w-full mt-10 px-6 flex flex-col">
              <label for="title" class="select-none font-semibold">Blog Title:</label>
-             <input type="text" name="title" class="input" value="<%= blog.title %>" placeholder="blog title" autocomplete="off">
+             <input type="text" name="title" class="input text-sm sm:text-base" value="<%= blog.title %>" placeholder="blog title" autocomplete="off">
          </div>
           <div class="w-full mt-10 px-6 flex flex-col">
              <label for="content" class="select-none font-semibold">Blog Content:</label>
@@ -31,7 +31,11 @@
  </div>
 
 
- <script src="/js/frontend/findSelectedOption.js"></script>
 
 
-<%- include("../includes/footer.ejs") %>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+ 
+<script>
+  new FroalaEditor('textarea');
+</script> 
+

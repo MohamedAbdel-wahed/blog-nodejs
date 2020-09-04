@@ -7,43 +7,106 @@
     <link rel="icon" type="image/png" href="/assets/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+ 
+
 </head>
 <body class="font-nunito bg-white overflow-x-hidden">
     
     <header id="navbar">
-        <nav class="w-full h-16 px-32 text-white font-bold bg-indigo-600 fixed top-0 flex items-center select-none z-30">
-            <a href="/" class="mx-8 text-2xl md:text-3xl tracking-wider flex">
+        <nav class="w-full h-16 sm:px-12 lg:px-32 text-white font-bold bg-blue-500 fixed top-0 flex items-center select-none z-40">
+            <a href="/" class="mx-8 text-2xl sm:text-3xl tracking-wider flex">
                 <span class="text-red-600">B</span>
                 <span class="text-red-100">logie</span>
             </a>
             
-            <ul id="navLinks" class="ml-auto flex ">
-           
+            <ul id="navLinks" class="hidden ml-auto sm:flex">
                <% if(!user){ %>
-                    <li id="" class="mr-4 p-2 cursor-pointer">
+                    <li id="" class="mr-4 hover:opacity-75 p-2 cursor-pointer">
                         <a href="/">Home</a>
                     </li>
-                    <li id="signup" class="mr-4 p-2 cursor-pointer">
+                    <li id="about" class="mr-4 hover:opacity-75 p-2 cursor-pointer">
+                        <a href="/about">About</a>
+                    </li>
+                    <li id="signup" class="mr-4 hover:opacity-75 p-2 cursor-pointer">
                         <a href="/signup">Signup</a>
                     </li> 
-                    <li id="signin" class="mr-4 p-2 cursor-pointer">
+                    <li id="signin" class="mr-4 hover:opacity-75 p-2 cursor-pointer">
                         <a href="/signin">Signin</a>
                     </li>
                 <% }else{ %>
-                    <li id="" class="mr-4 p-2 cursor-pointer">
+                    <li id="" class="mr-4 hover:opacity-75 p-2 cursor-pointer">
                         <a href="/">Home</a>
                     </li>
-                    <li id="blogs" class="mr-4 p-2 cursor-pointer">
+                    <li id="blogs" class="mr-4 hover:opacity-75 p-2 cursor-pointer">
                         <a href="/blogs">Blogs</a>
                     </li>
-                    <li id="about" class="mr-4 p-2 cursor-pointer">
+                    <li id="about" class="mr-4 hover:opacity-75 p-2 cursor-pointer">
                         <a href="/about">About</a>
                     </li>
-                    <li class="mr-4 p-2 cursor-pointer">
+                    <li class="mr-4 hover:opacity-75 p-2 cursor-pointer">
                         <a href="/logout">SignOut</a>
                     </li>
                <% } %>
             </ul>
+
+            <!-- menu button for small devices -->
+            <div id="toggler" class="ml-auto mr-8 block sm:hidden">
+                <img id="menuBtn" src="/assets/images/menu.png" class="w-6 cursor-pointer">
+                <img id="closeBtn"src="/assets/images/close.png" class="w-6 hidden cursor-pointer">
+            </div>
         </nav>
+
+        <div id="sidebar" class="hidden sm:hidden fixed h-screen top-0 right-0 w-7/12 xs:w-1/2 border-l border-blue-700 bg-blue-800 transition-all duration-900 ease-out z-30">
+            <ul id="navLinks" class="w-full mt-24 flex flex-col text-center text-white font-bold">
+                <% if(!user){ %>
+                    <li id="" class="py-2 cursor-pointer hover:opacity-50 border-b  border-gray-600">
+                        <a href="/">Home</a>
+                    </li>
+                    <li id="about" class=" mt-2 py-2 cursor-pointer hover:opacity-50 border-b  border-gray-600">
+                        <a href="/about">About</a>
+                    </li>
+                    <li id="signup" class="mt-2 py-2 cursor-pointer hover:opacity-50 border-b  border-gray-600">
+                        <a href="/signup">Signup</a>
+                    </li> 
+                    <li id="signin" class="mt-2 py-2 cursor-pointer hover:opacity-50 border-b  border-gray-600">
+                        <a href="/signin">Signin</a>
+                    </li>
+                <% }else{ %>
+                    <li id="" class=" py-2 cursor-pointer hover:opacity-50 border-b  border-gray-600">
+                        <a href="/">Home</a>
+                    </li>
+                    <li id="blogs" class="mt-2 py-2 cursor-pointer hover:opacity-50 border-b  border-gray-600">
+                        <a href="/blogs">Blogs</a>
+                    </li>
+                    <li id="about" class=" mt-2 py-2 cursor-pointer hover:opacity-50 border-b  border-gray-600">
+                        <a href="/about">About</a>
+                    </li>
+                    <li class="py-2 cursor-pointer">
+                        <a href="/logout">SignOut</a>
+                    </li>
+               <% } %>
+            </ul>
+        </div>
+
     </header>
-        
+
+
+
+
+<script>
+      const toggler= document.querySelector('#toggler');
+      const sidebar= document.querySelector('#sidebar');
+      const menuBtn= document.querySelector('#menuBtn');
+      const closeBtn= document.querySelector('#closeBtn');
+      
+      toggler.addEventListener('click', (e)=>{
+            menuBtn.classList.toggle('hidden');
+            closeBtn.classList.toggle('hidden');
+            sidebar.classList.toggle('hidden');
+      });
+
+</script>
+
+<script defer src="/js/frontend/selectActiveLink.js"></script>
+ 

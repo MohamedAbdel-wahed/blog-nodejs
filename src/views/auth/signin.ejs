@@ -1,9 +1,9 @@
 <%- include("../includes/header.ejs") %>
 
-<div class="w-full h-screen container">
-    <div class="mt-32 mb-16 mx-auto px-16 flex justify-center">
-        <div class="w-1/2 pb-10 border border-gray-300 rounded-md shadow-sm">
-            <h1 class="bg-gray-300 px-6 py-3 text-gray-900 text-center text-xl font-extrabold select-none">Login</h1>
+<div class="w-full sm:h-screen mx-auto container">
+    <div class="mt-32 px-10 sm:px-16 flex justify-center">
+        <div class="w-full md:w-10/12 lg:w-2/3 xl:w-1/2 pb-10 sm:border sm:border-gray-300 rounded-md shadow-sm">
+            <h1 class="sm:bg-gray-300 px-6 py-3 text-gray-900 text-center text-4xl sm:text-2xl font-extrabold select-none">Login</h1>
             <form id="signin_form" action="/signin" method="POST" class="w-full">
                 <div class="w-full mt-8 px-10 flex flex-col">
                     <label for="email" class="font-semibold select-none">Email:</label>
@@ -26,4 +26,3 @@
  <script src="/js/auth/signin.js"></script>
 
 
-<%- include("../includes/footer.ejs") %>

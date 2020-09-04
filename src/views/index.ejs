@@ -3,57 +3,140 @@
 
 
     <section id="background" class="mt-16 w-full shadow-md">
-        <div class="absolute top-0 w-full flex flex-col justify-center items-center mt-16 bg-gray-900 opacity-75 md:opacity-0 md:hover:opacity-75 rounded-br-lg rounded-bl-lg z-20 transition-all duration-150 ease-in-out cursor-default" style="height:30.1rem">
-           <h1 class="text-white font-bold text-4xl tracking-wider">Welcome To Our Site</h1>
-           <a href="/blogs/create" class="absolute top-0 mt-64 transform translate-y-8 px-10 py-6 bg-indigo-700 focus:bg-indigo-800 text-lg font-bold text-white hover:text-indigo-300 focus:outline-none rounded-tr-full rounded-bl-full transition-all duration-150 ease-in-out">Create New Blog</a>
+        <div class="absolute top-0 w-full flex flex-col justify-center items-center mt-16 bg-gray-900 opacity-75 rounded-br-lg rounded-bl-lg z-20 cursor-default h-98 md:h-106 ">
+           <h1 class="-mt-8 text-white font-extrabold text-xl md:text-4xl tracking-wider uppercase px-3">Welcome To Our Site</h1>
+           <p class="my-3 text-white font-semibold text-sm md:text-base text-center capitalize px-2 xs:px-12 sm:px-32 md:px-48">Blogie is one of the best sites to share your thoughts with other people in the world</p>
+           <a href="/about" class="about_btn absolute top-0 mt-64 transform origin-center translate-y-12 sm:translate-y-16 md:translate-y-24 opacity-0 px-8 sm:px-10 py-4 sm:py-6 rounded-md bg-blue-700 focus:bg-indigo-800 text-lg sm:text-xl font-bold  tracking-wide text-white hover:text-blue-300 focus:outline-none uppercase transition-all duration-150 ease-in-out">About US</a>
         </div>
-        <img src="/assets/images/bg.jpg" class="w-full mt-16 rounded-br-lg rounded-bl-lg" style="height:30rem">
+        <img id="imgTemp" src="/assets/images/blogbg5.jpg" class="w-full mt-16 rounded-br-lg rounded-bl-lg h-98 md:h-106">
     </section>
   
-
-    <section id="blogs_quotes" class="w-full mb-24 py-6 px-10 flex flex-col items-center">
-        <header class="w-full my-4 py-4 flex justify-center items-center">
-            <h1 class="font-bold text-2xl md:text-4xl text-orange-600">Some Famous Blogging Quotes</h1>
-        </header>
-       <div class="w-full flex justify-center">
-            <article id="1" class="article flex md:border md:border-gray-100">
-                <div id="quote1_img" class="w-full flex justify-center p-3">
-                    <img src="/assets/images/quote1.jpg" class="w-8/12 h-56 flex-shrink-0 rounded-lg">
-                </div>
-                <div id="desc_quote1" class="w-full ml-12 py-2 px-16 ">
-                    <h1 class="my-1 text-gray-900 font-extrabold text-xl">Andrew Sullivan</h1>
-                    <p class="mt-2 mb-4 text-gray-600 text-sm md:text-base font-semibold italic leading-tight">“Blogging is to writing what extreme sports are to athletics: more free-form, more accident-prone, less formal, more alive. It is, in many ways, writing out loud.”</p>
-                </div>
-            </article> 
-            <article id="2" class="article hidden md:border md:border-gray-100">
-                <div id="quote1_img" class="w-full flex justify-center p-3">
-                    <img src="/assets/images/quote2.jpg" class="w-8/12 h-56 flex-shrink-0 rounded-lg">
-                </div>
-                <div id="desc_quote2" class="w-full ml-12 py-2 px-16">
-                    <h1 class="my-1 text-gray-900 font-extrabold text-xl">Pat Flynn</h1>
-                    <p class="mt-2 mb-4 text-gray-600 text-sm md:text-base font-semibold italic leading-tight">Selling to people through social media is like going to a party, meeting somebody for the first time, and then saying, <strong class="text-gray-600">“Hey, do you want to buy this Tupperware?”</strong></p>
-                </div>
-            </article> 
-            <article id="3" class="article hidden md:border md:border-gray-100">
-                <div id="quote1_img" class="w-full flex justify-center p-3">
-                    <img src="/assets/images/quote3.jpg" class="w-8/12 h-56 flex-shrink-0 rounded-lg">
-                </div>
-                <div id="desc_quote3" class="w-full ml-12 py-2 px-16 ">
-                    <h1 class="my-1 text-gray-900 font-extrabold text-xl">Darren Rowse</h1>
-                    <p class="mt-2 mb-4 text-gray-600 text-sm md:text-base font-semibold italic leading-tight">“I’ve long advised that bloggers seeking to make money from blogging spread their interests across multiple revenue streams so as not to put all their eggs in one basket.”</p>
-                </div>
-            </article> 
-       </div>
-      <div id="quote_tabs" class="flex mt-6 text-gray-700 font-bold border border-gray-400 rounded-md select-none">
-          <div data-id="1" class="activeTab quoteTab">1</div>
-          <div data-id="2" class="quoteTab">2</div>
-          <div data-id="3" class="quoteTab">3</div>
-      </div>
+    <section id="blogging_reasons" class="pt-20 lg:pt-32 pb-10 transform scale-y-0 opacity-0 rounded-lg">
+        <div class="flex md:flex-row flex-col items-center lg:container lg:mx-auto">
+            <div class="w-full sm:10/12 md:w-1/2 lg:w-7/12 text-blue-200 ">
+                <h1 class="question ml-10 sm:ml-8 xl:ml-12 px-2 xs:px-6 sm:px-8 xl:px-16 text-xl md:text-3xl font-bold lg:font-extrabold text-red-500 transform -translate-x-100 opacity-0">6 Reasons Why You Should Start Blogging</h1>
+                <ul class="answers list-disc my-2 sm:my-4 ml-16 sm:ml-20 xl:ml-24 px-8 sm:px-12 md:px-8 lg:px-12 xl:px-20 text-base xs:text-lg sm:text-xl text-gray-600 font-semibold transform -translate-x-100">
+                    <li class="py-1">Attract an Audience</li>
+                    <li class="py-1">Establish Authority</li>
+                    <li class="py-1">Build Rapport and Engagement</li>
+                    <li class="py-1">Meet New People</li>
+                    <li class="py-1">Create Opportunities & Make Money</li>
+                    <li class="py-1">Organize Your Thoughts and Learn</li>
+                </ul>
+            </div>
+           <div class="image w-full sm:9/12 md:w-1/2 lg:5/12 mt-4 md:mt-0 ml-10 sm:ml-0 flex justify-center opacity-0 transform translate-x-100">
+              <img src="/assets/images/blogging.jpg" class="w-9/12 md:w-full xl:w-11/12 rounded-md">
+           </div>
+        </div>
     </section>
 
-
-
-
-<script src="/js/frontend/makeTaps.js"></script>   
+    <section id="blogging_quotes" class="mt-16 md:mt-20 lg:mt-24 pb-8 shadow-lg rounded-br-md rounded-bl-md">
+        <div class="px-2 xs:px-4 sm:px-24 md:px-32 lg:px-40">
+            <h1 id="quotes_head" class="transform origin-center scale-y-0 mt-6 mb-4 md:mb-16 font-bold md:font-extrabold text-red-600 text-lg xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl capitalize flex justify-center">Some Famous Quotes About Blogs</h1>
+            <article id="quote1" class="w-full flex flex-col justify-center md:flex-row md:justify-around my-16 shadow-sm">
+                <div id="quote1_img" class="w-full md:w-9/12 lg:w-1/2 flex justify-center p-3 -ml-8 md:ml-0 lg:ml-3">
+                    <img src="/assets/images/quote1.jpg" class="w-9/12 xs:w-7/12 sm:w-7/12 md:w-full lg:w-10/12 xl:w-8/12 h-56 ml-8 sm:ml-0 md:ml-8 flex-shrink-0 rounded-lg">
+                </div>
+                   <div id="quote1_desc" class="w-10/12 sm:w-12/12 md:w-full lg:w-2/3 ml-12 xs:ml-24 sm:ml-20 md:ml-12 lg:ml-6 xl:ml-3 pb-3 md:py-6">
+                       <h1 class="my-1 text-gray-900 font-bold text-lg xs:text-xl sm:text-2xl lg:text-3xl">Andrew Sullivan</h1>
+                       <p class="md:my-2 ml-2 px-2 py-2 border-l-4 rounded-md border-gray-600 text-gray-600 text-sm md:text-base font-semibold italic">“Blogging is to writing what extreme sports are to athletics: more free-form, more accident-prone, less formal, more alive. It is, in many ways, writing out loud.”</p>
+                   </div>
+           </article>
+           <article id="quote2" class="w-full flex flex-col justify-center md:flex-row md:justify-around my-16 shadow-sm">
+               <div id="quote2_img" class="w-full md:w-9/12 lg:w-1/2 flex justify-center p-3 -ml-8 md:ml-0 lg:ml-3">
+                   <img src="/assets/images/quote2.jpg" class="w-9/12 xs:w-7/12 sm:w-7/12 md:w-full lg:w-10/12 xl:w-8/12 h-56 ml-8 sm:ml-0 md:ml-8 flex-shrink-0 rounded-lg">
+               </div>
+                  <div id="quote2_desc" class="w-10/12 sm:w-12/12 md:w-full lg:w-2/3 ml-12 xs:ml-24 sm:ml-20 md:ml-12 lg:ml-6 xl:ml-3 pb-3 md:py-6">
+                      <h1 class="my-1 text-gray-900 font-bold text-lg xs:text-xl sm:text-2xl lg:text-3xl">Pat Flynn</h1>
+                      <p class="md:my-2 ml-2 px-2 py-2 border-l-4 rounded-md border-gray-600 text-gray-600 text-sm md:text-base font-semibold italic">“Selling to people through social media is like going to a party, meeting somebody for the first time, and then saying, <strong class="text-gray-600">“Hey, do you want to buy this Tupperware?”</strong></p>
+                  </div>
+           </article>
+           <article id="quote3" class="w-full flex flex-col justify-center md:flex-row md:justify-around my-16 shadow-sm">
+               <div id="quote3_img" class="w-full md:w-9/12 lg:w-1/2 flex justify-center p-3 -ml-8 md:ml-0 lg:ml-3">
+                   <img src="/assets/images/quote3.jpg" class="w-9/12 xs:w-7/12 sm:w-7/12 md:w-full lg:w-10/12 xl:w-8/12 h-56 ml-8 sm:ml-0 md:ml-8 flex-shrink-0 rounded-lg">
+               </div>
+                  <div id="quote3_desc" class="w-10/12 sm:w-12/12 md:w-full lg:w-2/3 ml-12 xs:ml-24 sm:ml-20 md:ml-12 lg:ml-6 xl:ml-3 pb-3 md:py-6">
+                      <h1 class="my-1 text-gray-900 font-bold text-lg xs:text-xl sm:text-2xl lg:text-3xl">Darren Rowse</h1>
+                      <p class="md:my-2 ml-2 px-2 py-2 border-l-4 rounded-md border-gray-600 text-gray-600 text-sm md:text-base font-semibold italic">“I’ve long advised that bloggers seeking to make money from blogging spread their interests across multiple revenue streams so as not to put all their eggs in one basket.”</p>
+                  </div>
+           </article>
+            <article id="quote4" class="w-full flex flex-col justify-center md:flex-row md:justify-around my-16 shadow-sm">
+               <div id="quote4_img" class="w-full md:w-9/12 lg:w-1/2 flex justify-center p-3 -ml-8 md:ml-0 lg:ml-3">
+                   <img src="/assets/images/quote4.jpeg" class="w-9/12 xs:w-7/12 sm:w-7/12 md:w-full lg:w-10/12 xl:w-8/12 h-56 ml-8 sm:ml-0 md:ml-8 flex-shrink-0 rounded-lg">
+               </div>
+                  <div id="quote4_desc" class="w-10/12 sm:w-12/12 md:w-full lg:w-2/3 ml-12 xs:ml-24 sm:ml-20 md:ml-12 lg:ml-6 xl:ml-3 pb-3 md:py-6">
+                      <h1 class="my-1 text-gray-900 font-bold text-lg xs:text-xl sm:text-2xl lg:text-3xl">Eric Schmidt</h1>
+                      <p class="md:my-2 ml-2 px-2 py-2 border-l-4 rounded-md border-gray-600 text-gray-600 text-sm md:text-base font-semibold italic">“The internet is really about highly specified information.”</p>
+                  </div>
+           </article>
+           <article id="quote5" class="w-full flex flex-col justify-center md:flex-row md:justify-around my-16 shadow-sm">
+                <div id="quote5_img" class="container mx-auto w-full md:w-9/12 lg:w-1/2 flex justify-center p-3 -ml-8 md:ml-0 lg:ml-3">
+                    <img src="/assets/images/quote5.jpg" class="w-9/12 xs:w-7/12 sm:w-7/12 md:w-full lg:w-10/12 xl:w-8/12 h-56 ml-8 sm:ml-0 md:ml-8 flex-shrink-0 rounded-lg">
+                </div>
+               <div id="quote5_desc" class="w-10/12 sm:w-12/12 md:w-full lg:w-2/3 ml-12 xs:ml-24 sm:ml-20 md:ml-12 lg:ml-6 xl:ml-3 pb-3 md:py-6">
+                   <h1 class="my-1 text-gray-900 font-bold text-lg xs:text-xl sm:text-2xl lg:text-3xl">Stephen King</h1>
+                   <p class="md:my-2 ml-2 px-2 py-2 border-l-4 rounded-md border-gray-600 text-gray-600 text-sm md:text-base font-semibold italic">“If you want to be a writer, you must do two things above all: Read a lot and write a lot”</p>
+               </div>
+            </article>
+        </div>
+    </section> 
     
-<%- include("includes/footer.ejs") %>
+    <section id="joke" class="mt-10 md:mt-24 mb-16 pt-10 pb-12">
+        <div class="px-4 xs:px-8 md:px-12">
+            <h1 class="font-bold lg:font-extrabold text-gray-700 text-xl sm:text-2xl lg:text-4xl capitalize text-center">Now Because We Know You Got So <span class="text-red-600">B</span>logging About it</h1>
+            <% if(user){ %>
+                <div class="my-3 md:my-1 flex justify-center items-center">
+                     <h1 class="font-semibold text-blue-900 text-lg md:text-xl capitalize">We Offer You To Create A Blog</h1>
+                     <img src="/assets/images/wink.png" class="ml-3 w-8 md:w-10">
+                </div>
+                <div class="my-2 flex justify-center">
+                    <a href="/blogs/create" class="px-6 py-3 bg-blue-500 focus:bg-blue-700 text-white font-bold hover:text-blue-200 focus:outline-none rounded-md transition-all duration-150 ease-in-out">Create Blog</a>
+                </div>
+            <% }else{ %>
+                <div class="my-3 md:my-1 flex justify-center items-center">
+                     <h1 class="font-semibold text-blue-900 text-lg md:text-xl capitalize">We Offer You To Join Us</h1>
+                     <img src="/assets/images/wink.png" class="ml-3 w-8 md:w-10">
+                </div>
+                <div class="my-2 flex justify-center">
+                    <a href="/signup" class="px-6 py-3 bg-blue-500 focus:bg-blue-700 text-white text-lg font-bold hover:text-blue-200 focus:outline-none rounded-md transition-all duration-150 ease-in-out">Join Us</a>
+                </div>
+            <% } %>
+            
+        </div>
+    </section>
+
+      
+
+    <footer class="relative w-full h-16 bg-gray-900 flex justify-center items-center py-4">
+        <h1 class="text-white font-bold text-lg">&copy;copyright 2020 blogiemedia inc.</h1>
+    </footer>
+
+
+     
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+<script src="/js/frontend/switchBg.js"></script>   
+<script>
+   
+    window.onload= function(){
+        TweenMax.to('.about_btn',1,{opacity:100});
+        TweenMax.to('.about_btn',.2,{borderTopRightRadius:"9999px",borderBottomLeftRadius:"9999px",delay:.7 });
+        TweenMax.to('.about_btn',1.6,{rotation: -360,delay:1 });
+    };
+
+    window.addEventListener('scroll', function(e) {
+        if(window.pageYOffset >= 60){
+            TweenMax.to('#blogging_reasons',1.5,{scaleY: 1, opacity:100,boxShadow: ' 0 15px 20px -10px rgba(0, 0, 0, 0.1)', border:'1px solid #ddd',ease: "elastic.out(1, 0.3)"});
+            TweenMax.to('.image',1,{x: '-30rem',opacity:100,delay:.5,ease: "back.out(1.7)" });
+            TweenMax.to('.question',1,{x: '-16rem',opacity:100,delay:1.2,ease: "back.out(1.7)" });
+            TweenMax.to('.answers',1,{x: '-18rem',delay:1.5,ease: "back.out(1.7)" });
+            TweenMax.to('#blogging_reasons',2,{ border:'0px solid #ddd',delay:2});
+        }
+
+        if(window.pageYOffset >= 645){
+            TweenMax.to('#quotes_head',.8,{scaleY:2});   
+            TweenMax.to('#quotes_head',1,{scaleY:1});   
+        }
+    });
+
+</script>
