@@ -8,7 +8,7 @@ const authRoutes= require('./routes/auth')
 const {checkCurrentUser}= require('./middleware/auth')
 
 
-
+const PORT= process.env.PORT || 5000
 const app= express()
 app.use(expressFileupload())
 app.use(express.json())
@@ -22,8 +22,8 @@ app.set('views','src/views')
 
 
 const dbURI="mongodb+srv://mohamed:mohamed221999@node-blog.fzquz.mongodb.net/blogie?retryWrites=true&w=majority";
-mongoose.connect(dbURI, {useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true})
-        .then(()=> app.listen(5000))
+mongoose.connect(process.env.MONGODB_URI || dbURI, {useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true})
+        .then(()=> app.listen(PORT))
         .catch(err=> console.log(err))
 
 
